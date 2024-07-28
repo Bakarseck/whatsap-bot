@@ -2,7 +2,6 @@ const socket = io();
 
 socket.on('qr', (qr) => {
     document.getElementById('qr-container').style.display = 'block';
-    document.getElementById('content').style.display = 'none';
 
     const qrCodeContainer = document.getElementById('qr-code');
     qrCodeContainer.innerHTML = '';
@@ -15,7 +14,6 @@ socket.on('qr', (qr) => {
 
 socket.on('ready', () => {
     document.getElementById('qr-container').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
 });
 
 socket.on('message', (msg) => {
